@@ -3,7 +3,7 @@ import { User } from '../types';
 // Simulated auth service (in production, this would connect to a backend)
 class AuthService {
   private static instance: AuthService;
-  private users: Map<string, User> = new Map();
+  private users: Map<string, User & { password: string }> = new Map(); // Include password in user object
   private currentUser: User | null = null;
 
   private constructor() {}
@@ -19,10 +19,11 @@ class AuthService {
       throw new Error('Email already exists');
     }
 
-    const user: User = {
+    const user: User & { password: string } = {
       id: Math.random().toString(36).substr(2, 9),
       email,
       name,
+      password, // Store the password with the user
     };
 
     this.users.set(email, user);
@@ -35,6 +36,12 @@ class AuthService {
     if (!user) {
       throw new Error('Invalid credentials');
     }
+
+    // Check if the password matches
+    if (user.password !== password) {
+      throw new Error('Invalid credentials');
+    }
+
     this.currentUser = user;
     return user;
   }

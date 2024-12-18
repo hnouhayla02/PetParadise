@@ -20,9 +20,14 @@ class PaymentService {
   }
 
   async processPayment(items: CartItem[], paymentDetails: PaymentDetails): Promise<string> {
-    // Simulate payment processing
+    // Simulate payment processing by referencing items and paymentDetails
     return new Promise((resolve) => {
       setTimeout(() => {
+        // For now, just log the items and payment details (you could do actual processing here)
+        console.log('Processing payment for items:', items);
+        console.log('Payment details:', paymentDetails);
+
+        // Simulate a payment success response
         resolve('PAYMENT_SUCCESS_' + Math.random().toString(36).substr(2, 9));
       }, 1500);
     });
