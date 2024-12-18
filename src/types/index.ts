@@ -5,7 +5,7 @@ export interface Product {
     salePrice?: number;
     description: string;
     image: string;
-    category: 'food' | 'toys' | 'accessories' | 'health';
+    category: string;
   }
   
   export interface User {

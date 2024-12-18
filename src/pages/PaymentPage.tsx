@@ -1,6 +1,4 @@
-import React from 'react';
 import { CreditCard, Calendar, Lock } from 'lucide-react';
-
 export function PaymentPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-16">

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Heart, Users, Clock, MapPin } from 'lucide-react';
 
 export function AboutPage() {

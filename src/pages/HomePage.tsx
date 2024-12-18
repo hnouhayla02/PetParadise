@@ -1,8 +1,7 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SaleBanner } from '../components/SaleBanner';
 import { ProductCard } from '../components/ProductCard';
-import { products } from '../data/products';
+import { products }  from '../data/products';
 import { Heart, Truck, Shield } from 'lucide-react';
 
 export function HomePage() {
